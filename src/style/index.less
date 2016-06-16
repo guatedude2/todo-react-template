@@ -1,0 +1,31 @@
+@import "_prefixer";
+
+@primary-color: #61DAFB;
+@secondary: #666;
+
+body {
+  font-family: Helvetica, sans-serif;
+  background: #EDEDED;
+}
+
+a {
+  color: @secondary;
+  text-decoration: none;
+
+  &:hover {
+    color: lighten(@secondary, 18%);
+  }
+}
+
+input.text-field {
+  .flex(1 1 auto);
+  outline: none;
+
+}
+
+main.app {
+  @import "components/TodoHeader";
+  @import "components/TodoFooter";
+  @import "components/TodoItem";
+  @import "containers/Todo";
+}

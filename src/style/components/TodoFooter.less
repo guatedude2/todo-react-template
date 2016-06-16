@@ -1,0 +1,25 @@
+footer.todo-footer {
+  .flex-block();
+  .align-items(center);
+
+  .filters {
+    .flex-block();
+    .flex(1 1 auto);
+
+
+    list-style: none;
+    margin: 0 0 0 20px;
+
+    li {
+      margin: 0;
+      padding: 4px 8px;
+
+
+      &.active {
+        font-weight: bold;
+        border-radius: 4px;
+        border: 1px solid @secondary;
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+div.todo-item {
+  .flex-block();
+
+  cursor: pointer;
+  height: 30px;
+
+  &.done {
+    .checkbox {
+      opacity: 0.5;
+    }
+
+    .content .text {
+      text-decoration: line-through;
+      opacity: 0.5;
+    }
+  }
+
+  &.editing {
+    .content {
+      .editor {
+        display: block;
+      }
+      .text {
+        display: none;
+      }
+    }
+  }
+
+  &:not(.editing):hover {
+    .delete {
+      display: block;
+    }
+  }
+
+  .content {
+    .flex-block();
+    .align-items(center);
+    .flex(1 1 auto);
+
+    .checkbox {
+      margin-right: 5px;
+    }
+
+    .editor {
+      .flex(1 1 auto);
+
+      display: none;
+      font-size: 14px;
+    }
+    .text {
+      .flex(1 1 auto);
+
+      font-size: 14px;
+    }
+  }
+
+  .delete {
+    margin: 0;
+    display: none;
+  }
+}
