@@ -11,8 +11,7 @@
     "lint": "eslint src test",
     "test": "mocha --compilers js:babel-register \"test/**/*.spec.js\"",
     "start": "webpack-dev-server --inline",
-    "precommit": "npm run test && npm run lint",
-    "prepush": "npm run test && npm run lint"
+    "prepush": "npm --silent run lint && npm --silent test -- -R base -b"
   },
   "author": "Change Me <changeme@example.com>",
   "devDependencies": {
