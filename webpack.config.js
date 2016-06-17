@@ -47,7 +47,7 @@ module.exports = {
     ])
   ],
   postcss: function () {
-      return [autoprefixer];
+    return [autoprefixer];
   },
   devServer: {
     headers: { 'Access-Control-Allow-Origin': '*' },

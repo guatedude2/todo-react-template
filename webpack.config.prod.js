@@ -45,6 +45,6 @@ module.exports = {
     new ExtractTextPlugin('css/app.bundle.css')
   ],
   postcss: function () {
-      return [autoprefixer];
+    return [autoprefixer];
   }
 };
