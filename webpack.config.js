@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
+var autoprefixer = require('autoprefixer');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
@@ -26,7 +27,7 @@ module.exports = {
 			loader: 'json'
     }, {
       test: /\.less$/,
-      loader: 'style!css!less'
+      loader: 'style!css!postcss!less'
     }, {
       test: /\.(gif|png|jpg)$/,
       loader: 'file?name=[path][name].[ext]'
@@ -45,6 +46,9 @@ module.exports = {
       { from: 'assets/index.html' }
     ])
   ],
+  postcss: function () {
+      return [autoprefixer];
+  },
   devServer: {
     headers: { 'Access-Control-Allow-Origin': '*' },
     noInfo: true,

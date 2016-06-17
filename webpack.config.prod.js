@@ -1,7 +1,8 @@
 var path = require('path');
 var webpack = require('webpack');
+var autoprefixer = require('autoprefixer');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var pacakgeJson = require('./package.json');
 
 module.exports = {
   devtool: 'eval',
@@ -24,7 +25,7 @@ module.exports = {
 			loader: 'json'
     }, {
       test: /\.less$/,
-      loader: ExtractTextPlugin.extract('style-loader', 'css!less')
+      loader: ExtractTextPlugin.extract('style-loader', 'css!postcss!less')
     }, {
       test: /\.(gif|png|jpg)$/,
       loader: 'file?name=[path][name].[ext]'
@@ -38,6 +39,12 @@ module.exports = {
         'NODE_ENV': JSON.stringify('development')
       }
     }),
+    new CopyWebpackPlugin([
+      { from: 'assets/index.html' }
+    ]),
     new ExtractTextPlugin('css/app.bundle.css')
-  ]
+  ],
+  postcss: function () {
+      return [autoprefixer];
+  }
 };

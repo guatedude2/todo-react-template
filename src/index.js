@@ -12,7 +12,6 @@ import routes from './routes';
 const browserHistory = useRouterHistory(createHistory)({
   basename: '/'
 });
-
 // create store
 const store = createStore();
 

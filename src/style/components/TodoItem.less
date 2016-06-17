@@ -1,5 +1,5 @@
 div.todo-item {
-  .flex-block();
+  display: flex;
 
   cursor: pointer;
   height: 30px;
@@ -33,23 +33,21 @@ div.todo-item {
   }
 
   .content {
-    .flex-block();
-    .align-items(center);
-    .flex(1 1 auto);
+    display: flex;
+    align-items: center;
+    flex: 1 1 auto;
 
     .checkbox {
       margin-right: 5px;
     }
 
     .editor {
-      .flex(1 1 auto);
-
+      flex: 1 1 auto;
       display: none;
       font-size: 14px;
     }
     .text {
-      .flex(1 1 auto);
-
+      flex: 1 1 auto;
       font-size: 14px;
     }
   }
